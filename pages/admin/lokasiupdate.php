@@ -29,20 +29,22 @@
 			Nama Lokasi Sama Sudah Ada
 		</div>
 <?php
-} else {
-	$updateSql = "UPDATE lokasi SET nama_lokasi = ? WHERE id = ?";
-	$stmt = $db->prepare($updateSql);
-	$stmt->bindParam(1, $_POST['nama_lokasi']);
-	$stmt->bindParam(2, $_POST['id']);
-	if($stmt->execute()){
-		$_SESSION['hasil'] = true;
-		$_SESSION['pesan'] = "Berhasil Ubah Data";
-	}else{
-		$_SESSION['hasil'] = false;
-		$_SESSION['pesan'] = "Gagal Ubah Data";
+			} else {
+				$updateSql = "UPDATE lokasi SET nama_lokasi = ? WHERE id = ?";
+				$stmt = $db->prepare($updateSql);
+				$stmt->bindParam(1, $_POST['nama_lokasi']);
+				$stmt->bindParam(2, $_POST['id']);
+				if($stmt->execute()){
+					$_SESSION['hasil'] = true;
+					$_SESSION['pesan'] = "Berhasil Ubah Data";
+				}else{
+					$_SESSION['hasil'] = false;
+					$_SESSION['pesan'] = "Gagal Ubah Data";
+				}
+				echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
+			}
+		}
 	}
-	echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
-}
 }
 ?>
 
