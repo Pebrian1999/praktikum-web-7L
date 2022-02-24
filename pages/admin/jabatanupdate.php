@@ -24,9 +24,9 @@
 				if ($stmt->rowCount()>0) {
  ?>
  		<div class="alert alert-danger alert-dismissible">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
 			<h5><i class="icon fas fa-ban"></i>GAGAL</h5>
-			Nama Lokasi Sama Sudah Ada
+			Nama Jabatan Sama Sudah Ada
 		</div>
 <?php
 			} else {
